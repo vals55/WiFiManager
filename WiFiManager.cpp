@@ -124,7 +124,12 @@ int WiFiManagerParameter::getLabelPlacement() const {
 const char* WiFiManagerParameter::getCustomHTML() const {
   return _customHTML;
 }
-
+void WiFiManagerParameter::setCustomHtml(const char* custom) {
+    if(!_id){
+      return;
+  }
+  _customHTML = custom;
+}
 /**
  * [addParameter description]
  * @access public
