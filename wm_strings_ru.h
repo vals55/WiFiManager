@@ -60,14 +60,14 @@ const char * const HTTP_PORTAL_MENU[] PROGMEM = {
 
 // const char HTTP_PORTAL_OPTIONS[]   PROGMEM = strcat(HTTP_PORTAL_MENU[0] , HTTP_PORTAL_MENU[3] , HTTP_PORTAL_MENU[7]);
 const char HTTP_PORTAL_OPTIONS[]   PROGMEM = "";
-const char HTTP_TITLE_LIST[]   PROGMEM = "<label>Сканируем WiFi сети...</label>";
+const char HTTP_TITLE_LIST[]   	   PROGMEM = "<h3>Сканируем WiFi сети...</h3>";
 const char HTTP_ITEM_QI[]          PROGMEM = "<div role='img' aria-label='{r}%' title='{r}%' class='q q-{q} {i} {h}'></div>"; // rssi icons
 const char HTTP_ITEM_QP[]          PROGMEM = "<div class='q {h}'>{r}%</div>"; // rssi percentage {h} = hidden showperc pref
 const char HTTP_ITEM[]             PROGMEM = "<div><a href='#p' onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
 // const char HTTP_ITEM[]            PROGMEM = "<div><a href='#p' onclick='c(this)'>{v}</a> {R} {r}% {q} {e}</div>"; // test all tokens
 
 const char HTTP_FORM_START[]       PROGMEM = "<form method='POST' action='{v}'>";
-const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>Имя WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input style='font-size:.8em' type='checkbox' onclick='f()'> Показать пароль";
+const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>Имя WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input type='checkbox' onclick='f()'> Показать пароль";
 const char HTTP_FORM_WIFI_END[]    PROGMEM = "";
 // const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<hr><br/>";
 const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<br/><br/>";
@@ -97,7 +97,7 @@ const char HTTP_STYLE[]            PROGMEM = "<style>"
 //".c,body{text-align:center;font-family:verdana}div,input,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
 ".c,body{text-align:center;font-family:verdana}div,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
 //"input,button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}"
-"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;width:100%}label{font-size:.9em}"
+"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;width:100%}label{font-size:1em}"
 "button,input[type='button'],input[type='submit']{cursor:pointer;border:0;background-color:#1fa3ec;color:#fff;line-height:2.4rem;font-size:1.2rem;width:100%}"
 "input[type='file']{border:1px solid #1fa3ec}.logo-cont{display: flex}.logo-text{display: inline;font-weight: 700;color: #9303A7;font-size: 30px;line-height: 30px;padding-left: 15px;margin-top: 10px}"
 ".wrap {text-align:left;display:inline-block;min-width:260px;max-width:500px}"
