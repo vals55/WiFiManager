@@ -55,7 +55,7 @@ const char * const HTTP_PORTAL_MENU[] PROGMEM = {
 "<form action='/erase'   method='get'><button class='D'>Erase</button></form><br/>\n", // MENU_ERASE
 "<form action='/update'  method='get'><button>Update</button></form><br/>\n",// MENU_UPDATE
 //  "<hr><br/>" // MENU_SEP
- "<br/>" // MENU_SEP
+ "<br/><br/>" // MENU_SEP
 };
 
 // const char HTTP_PORTAL_OPTIONS[]   PROGMEM = strcat(HTTP_PORTAL_MENU[0] , HTTP_PORTAL_MENU[3] , HTTP_PORTAL_MENU[7]);
@@ -67,13 +67,14 @@ const char HTTP_ITEM[]             PROGMEM = "<div><a href='#p' onclick='c(this)
 // const char HTTP_ITEM[]            PROGMEM = "<div><a href='#p' onclick='c(this)'>{v}</a> {R} {r}% {q} {e}</div>"; // test all tokens
 
 const char HTTP_FORM_START[]       PROGMEM = "<form method='POST' action='{v}'>";
-const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>Имя WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input type='checkbox' onclick='f()'> Показать пароль";
+const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>Имя WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input style='font-size:.8em' type='checkbox' onclick='f()'> Показать пароль";
 const char HTTP_FORM_WIFI_END[]    PROGMEM = "";
 // const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<hr><br/>";
 const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<br/><br/>";
 const char HTTP_FORM_END[]         PROGMEM = "<br/><br/><button type='submit'>Save</button></form>";
 const char HTTP_FORM_LABEL[]       PROGMEM = "<label for='{i}'>{t}</label>";
-const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<hr><br/>";
+// const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<hr><br/>";
+const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<br/><br/>";
 const char HTTP_FORM_PARAM[]       PROGMEM = "<br/><input id='{i}' name='{n}' maxlength='{l}' value='{v}' {c}>\n"; // do not remove newline!
 
 const char HTTP_SCAN_LINK[]        PROGMEM = "<br/><form action='/wifi?refresh=1' method='POST'><button name='refresh' value='1'>Refresh</button></form>";
@@ -82,7 +83,7 @@ const char HTTP_PARAMSAVED[]       PROGMEM = "<div class='msg S'>Saved<br/></div
 const char HTTP_END[]              PROGMEM = "</div></body></html>";
 const char HTTP_ERASEBTN[]         PROGMEM = "<br/><form action='/erase' method='get'><button class='D'>Erase WiFi config</button></form>";
 const char HTTP_UPDATEBTN[]        PROGMEM = "<br/><form action='/update' method='get'><button>Update</button></form>";
-const char HTTP_BACKBTN[]          PROGMEM = "<hr><br/><form action='/' method='get'><button>Back</button></form>";
+const char HTTP_BACKBTN[]          PROGMEM = "<br/><br/><form action='/' method='get'><button>Back</button></form>";
 
 const char HTTP_STATUS_ON[]        PROGMEM = "<div class='msg S'><strong>Connected</strong> to {v}<br/><em><small>with IP {i}</small></em></div>";
 const char HTTP_STATUS_OFF[]       PROGMEM = "<div class='msg {c}'><strong>Not connected</strong> to {v}{r}</div>"; // {c=class} {v=ssid} {r=status_off}
@@ -96,7 +97,7 @@ const char HTTP_STYLE[]            PROGMEM = "<style>"
 //".c,body{text-align:center;font-family:verdana}div,input,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
 ".c,body{text-align:center;font-family:verdana}div,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
 //"input,button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}"
-"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;width:100%}label{font-size:.8em}"
+"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;width:100%}label{font-size:.9em}"
 "button,input[type='button'],input[type='submit']{cursor:pointer;border:0;background-color:#1fa3ec;color:#fff;line-height:2.4rem;font-size:1.2rem;width:100%}"
 "input[type='file']{border:1px solid #1fa3ec}.logo-cont{display: flex}.logo-text{display: inline;font-weight: 700;color: #9303A7;font-size: 30px;line-height: 30px;padding-left: 15px;margin-top: 10px}"
 ".wrap {text-align:left;display:inline-block;min-width:260px;max-width:500px}"
