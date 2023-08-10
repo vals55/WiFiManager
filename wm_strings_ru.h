@@ -91,8 +91,10 @@ const char HTTP_STATUS_NONE[]      PROGMEM = "";	//"<div class='msg'>No AP set</
 const char HTTP_BR[]               PROGMEM = "<br/>";
 
 const char HTTP_STYLE[]            PROGMEM = "<style>"
-".c,body{text-align:center;font-family:verdana}div,input,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
-"input,button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}.input{border:0;border-bottom:1px solid #ccc;}"
+//".c,body{text-align:center;font-family:verdana}div,input,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
+".c,body{text-align:center;font-family:verdana}div,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
+//"input,button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}"
+"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width:auto}input{border:0;border-bottom:1px solid #ccc;}"
 "button,input[type='button'],input[type='submit']{cursor:pointer;border:0;background-color:#1fa3ec;color:#fff;line-height:2.4rem;font-size:1.2rem;width:100%}"
 "input[type='file']{border:1px solid #1fa3ec}.logo-cont{display: flex}.logo-text{display: inline;font-weight: 700;color: #9303A7;font-size: 30px;line-height: 30px;padding-left: 15px;margin-top: 10px}"
 ".wrap {text-align:left;display:inline-block;min-width:260px;max-width:500px}"
