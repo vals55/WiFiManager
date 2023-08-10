@@ -1397,7 +1397,8 @@ void WiFiManager::handleWifi(boolean scan) {
     page += getParamOut();
   }
   page += FPSTR(HTTP_FORM_END);
-  page += FPSTR(HTTP_SCAN_LINK);
+  //vals
+  //page += FPSTR(HTTP_SCAN_LINK);
   if(_showBack) page += FPSTR(HTTP_BACKBTN);
   reportStatus(page);
   page += FPSTR(HTTP_END);

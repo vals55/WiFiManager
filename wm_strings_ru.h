@@ -72,7 +72,7 @@ const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>Имя WiFi сет�
 const char HTTP_FORM_WIFI_END[]    PROGMEM = "";
 // const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<hr><br/>";
 const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<br/><br/>";
-const char HTTP_FORM_END[]         PROGMEM = "<br/><br/><button type='submit'>Save</button></form>";
+const char HTTP_FORM_END[]         PROGMEM = "<br/><br/><button type='submit'>Сохранить</button></form>";
 const char HTTP_FORM_LABEL[]       PROGMEM = "<label for='{i}'>{t}</label>";
 // const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<hr><br/>";
 const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<br/><br/>";
