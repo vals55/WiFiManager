@@ -54,7 +54,7 @@ const char * const HTTP_PORTAL_MENU[] PROGMEM = {
 // "<form action='/exit'    method='get'><button>Exit</button></form><br/>\n",  // MENU_EXIT
 // "<form action='/erase'   method='get'><button class='D'>Erase</button></form><br/>\n", // MENU_ERASE
 // "<form action='/update'  method='get'><button>Update</button></form><br/>\n",// MENU_UPDATE
-// "<hr><br/>" // MENU_SEP
+ "<hr><br/>" // MENU_SEP
 };
 
 // const char HTTP_PORTAL_OPTIONS[]   PROGMEM = strcat(HTTP_PORTAL_MENU[0] , HTTP_PORTAL_MENU[3] , HTTP_PORTAL_MENU[7]);
@@ -86,7 +86,7 @@ const char HTTP_STATUS_OFF[]       PROGMEM = "<div class='msg {c}'><strong>Not c
 const char HTTP_STATUS_OFFPW[]     PROGMEM = "<br/>Authentication failure"; // STATION_WRONG_PASSWORD,  no eps32
 const char HTTP_STATUS_OFFNOAP[]   PROGMEM = "<br/>AP not found";   // WL_NO_SSID_AVAIL
 const char HTTP_STATUS_OFFFAIL[]   PROGMEM = "<br/>Could not connect"; // WL_CONNECT_FAILED
-const char HTTP_STATUS_NONE[]      PROGMEM = "<div class='msg'>No AP set</div>";
+const char HTTP_STATUS_NONE[]      PROGMEM = "";	//"<div class='msg'>No AP set</div>";
 const char HTTP_BR[]               PROGMEM = "<br/>";
 
 const char HTTP_STYLE[]            PROGMEM = "<style>"
