@@ -1562,6 +1562,7 @@ String WiFiManager::WiFiManager::getScanItemOut(){
     if(!_numNetworks) WiFi_scanNetworks(); // scan in case this gets called before any scans
 
     int n = _numNetworks;
+    page += FPSTR(HTTP_TITLE_LIST); // title of list
     if (n == 0) {
       #ifdef WM_DEBUG_LEVEL
       DEBUG_WM(F("No networks found"));
