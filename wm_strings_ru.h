@@ -45,15 +45,15 @@ const char HTTP_HEAD_END[]         PROGMEM = "</head><body class='{c}'><div clas
 const char HTTP_ROOT_MAIN[]        PROGMEM = "<h1>Настройка</h1><form action='/wifi' method='get'><button class='button'>Начать настройку</button></form>";
 
 const char * const HTTP_PORTAL_MENU[] PROGMEM = {
-// "<form action='/wifi'    method='get'><button>Настройка</button></form><br/>\n", // MENU_WIFI
-// "<form action='/0wifi'   method='get'><button>Configure WiFi (No scan)</button></form><br/>\n", // MENU_WIFINOSCAN
-// "<form action='/info'    method='get'><button>Info</button></form><br/>\n", // MENU_INFO
-// "<form action='/param'   method='get'><button>Setup</button></form><br/>\n",//MENU_PARAM
-// "<form action='/close'   method='get'><button>Close</button></form><br/>\n", // MENU_CLOSE
-// "<form action='/restart' method='get'><button>Restart</button></form><br/>\n",// MENU_RESTART
-// "<form action='/exit'    method='get'><button>Exit</button></form><br/>\n",  // MENU_EXIT
-// "<form action='/erase'   method='get'><button class='D'>Erase</button></form><br/>\n", // MENU_ERASE
-// "<form action='/update'  method='get'><button>Update</button></form><br/>\n",// MENU_UPDATE
+"<form action='/wifi'    method='get'><button>Настройка</button></form><br/>\n", // MENU_WIFI
+"<form action='/0wifi'   method='get'><button>Configure WiFi (No scan)</button></form><br/>\n", // MENU_WIFINOSCAN
+"<form action='/info'    method='get'><button>Info</button></form><br/>\n", // MENU_INFO
+"<form action='/param'   method='get'><button>Setup</button></form><br/>\n",//MENU_PARAM
+"<form action='/close'   method='get'><button>Close</button></form><br/>\n", // MENU_CLOSE
+"<form action='/restart' method='get'><button>Restart</button></form><br/>\n",// MENU_RESTART
+"<form action='/exit'    method='get'><button>Exit</button></form><br/>\n",  // MENU_EXIT
+"<form action='/erase'   method='get'><button class='D'>Erase</button></form><br/>\n", // MENU_ERASE
+"<form action='/update'  method='get'><button>Update</button></form><br/>\n",// MENU_UPDATE
  "<hr><br/>" // MENU_SEP
 };
 
