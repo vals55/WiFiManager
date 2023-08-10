@@ -79,8 +79,8 @@ const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<br/><br/>";
 const char HTTP_FORM_PARAM[]       PROGMEM = "<br/><input id='{i}' name='{n}' maxlength='{l}' value='{v}' {c}>\n"; // do not remove newline!
 
 const char HTTP_SCAN_LINK[]        PROGMEM = "<br/><form action='/wifi?refresh=1' method='POST'><button name='refresh' value='1'>Refresh</button></form>";
-const char HTTP_SAVED[]            PROGMEM = "<div class='msg'>Saving Credentials<br/>Trying to connect ESP to network.<br />If it fails reconnect to AP to try again</div>";
-const char HTTP_PARAMSAVED[]       PROGMEM = "<div class='msg S'>Saved<br/></div>";
+const char HTTP_SAVED[]            PROGMEM = "<div class='msg'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>";
+const char HTTP_PARAMSAVED[]       PROGMEM = "<div class='msg S'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>";
 const char HTTP_END[]              PROGMEM = "</div></body></html>";
 const char HTTP_ERASEBTN[]         PROGMEM = "<br/><form action='/erase' method='get'><button class='D'>Erase WiFi config</button></form>";
 const char HTTP_UPDATEBTN[]        PROGMEM = "<br/><form action='/update' method='get'><button>Update</button></form>";
