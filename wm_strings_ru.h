@@ -85,7 +85,8 @@ const char HTTP_FORM_SELECT_CUST[] PROGMEM = "<select class='drop' id='{i}' name
 
 const char HTTP_SCAN_LINK[]        PROGMEM = "<br/><form action='/wifi?refresh=1' method='POST'><button name='refresh' value='1'>Refresh</button></form>";
 const char HTTP_SAVED[]            PROGMEM = "<div class='msg'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>";
-const char HTTP_PARAMSAVED[]       PROGMEM = "<div class='msg S'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>";
+const char HTTP_PARAMSAVED[]       PROGMEM = "<div class='msg S'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>"
+"<form action='/wifi' method='get'> <button>Начать с начала</button></form>";
 const char HTTP_END[]              PROGMEM = "</div></body></html>";
 const char HTTP_ERASEBTN[]         PROGMEM = "<br/><form action='/erase' method='get'><button class='D'>Erase WiFi config</button></form>";
 const char HTTP_UPDATEBTN[]        PROGMEM = "<br/><form action='/update' method='get'><button>Update</button></form>";
