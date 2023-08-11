@@ -32,10 +32,10 @@ const char HTTP_HEAD_START[]       PROGMEM = "<!DOCTYPE html>"
 
 const char HTTP_SCRIPT[]           PROGMEM = "<script>function c(l){"
 "document.getElementById('s').value=l.getAttribute('data-ssid')||l.innerText||l.textContent;"
-// "p = l.nextElementSibling.classList.contains('l');"
-// "document.getElementById('p').disabled = !p;"
+"p = l.nextElementSibling.classList.contains('l');"
+"document.getElementById('p').disabled = !p;"
 // vals
-// "if(p)document.getElementById('p').focus();"
+"if(p)document.getElementById('p').focus();"
 "};"
 "function f() {var x = document.getElementById('p');x.type==='password'?x.type='text':x.type='password';}"
 "function g(b){return document.getElementById(b);} function extraConf() {var e=g('chbox');var d='none';if(e.checked){d='block'}g('extra_conf').style.display=d;}"
@@ -67,7 +67,7 @@ const char HTTP_TITLE_LIST[]   	   PROGMEM = "<h3>Сканируем WiFi сет
 const char HTTP_ITEM_QI[]          PROGMEM = "<div role='img' aria-label='{r}%' title='{r}%' class='q q-{q} {i} {h}'></div>"; // rssi icons
 const char HTTP_ITEM_QP[]          PROGMEM = "<div class='q {h}'>{r}%</div>"; // rssi percentage {h} = hidden showperc pref
 // vals
-const char HTTP_ITEM[]             PROGMEM = "<div><a href='#p' onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
+const char HTTP_ITEM[]             PROGMEM = "<div><a href='#pp' onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
 // const char HTTP_ITEM[]             PROGMEM = "<div><a href='#p' onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
 // const char HTTP_ITEM[]            PROGMEM = "<div><a href='#p' onclick='c(this)'>{v}</a> {R} {r}% {q} {e}</div>"; // test all tokens
 
@@ -114,7 +114,7 @@ const char HTTP_STYLE[]            PROGMEM = "<style>"
 "input[type='file']{border:1px solid #C038D3}.logo-cont{display: flex}.logo-text{display: inline;font-weight: 700;color: #9303A7;font-size: 30px;line-height: 30px;padding-left: 15px;margin-top: 10px}"
 ".wrap {text-align:left;display:inline-block;min-width:260px;max-width:500px}"
 // links
-"a{color:#000;font-weight:700;text-decoration:none}a:hover{color:#C038D3;text-decoration:underline}"
+"a{color:#000;font-weight:700;text-decoration:none}a:hover{color:#C038D3;text-decoration:none;background-color:#ccc;}"
 // quality icons
 ".q{height:16px;margin:0;padding:0 5px;text-align:right;min-width:38px;float:right}.q.q-0:after{background-position-x:0}.q.q-1:after{background-position-x:-16px}.q.q-2:after{background-position-x:-32px}.q.q-3:after{background-position-x:-48px}.q.q-4:after{background-position-x:-64px}.q.l:before{background-position-x:-80px;padding-right:5px}.ql .q{float:left}.q:after,.q:before{content:'';width:16px;height:16px;display:inline-block;background-repeat:no-repeat;background-position: 16px 0;"
 "background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAMAAADeZIrLAAAAJFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADHJj5lAAAAC3RSTlMAIjN3iJmqu8zd7vF8pzcAAABsSURBVHja7Y1BCsAwCASNSVo3/v+/BUEiXnIoXkoX5jAQMxTHzK9cVSnvDxwD8bFx8PhZ9q8FmghXBhqA1faxk92PsxvRc2CCCFdhQCbRkLoAQ3q/wWUBqG35ZxtVzW4Ed6LngPyBU2CobdIDQ5oPWI5nCUwAAAAASUVORK5CYII=');}"
