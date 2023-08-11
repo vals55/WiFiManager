@@ -64,7 +64,9 @@ const char HTTP_PORTAL_OPTIONS[]   PROGMEM = "";
 const char HTTP_TITLE_LIST[]   	   PROGMEM = "<h3>Сканируем WiFi сети...</h3>";
 const char HTTP_ITEM_QI[]          PROGMEM = "<div role='img' aria-label='{r}%' title='{r}%' class='q q-{q} {i} {h}'></div>"; // rssi icons
 const char HTTP_ITEM_QP[]          PROGMEM = "<div class='q {h}'>{r}%</div>"; // rssi percentage {h} = hidden showperc pref
-const char HTTP_ITEM[]             PROGMEM = "<div><a href='#p' onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
+// vals
+const char HTTP_ITEM[]             PROGMEM = "<div><a href onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
+// const char HTTP_ITEM[]             PROGMEM = "<div><a href='#p' onclick='c(this)' data-ssid='{V}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
 // const char HTTP_ITEM[]            PROGMEM = "<div><a href='#p' onclick='c(this)'>{v}</a> {R} {r}% {q} {e}</div>"; // test all tokens
 
 const char HTTP_FORM_START[]       PROGMEM = "<form method='POST' action='{v}'>";
@@ -103,10 +105,10 @@ const char HTTP_STYLE[]            PROGMEM = "<style>"
 ".box{position:absolute;top:25px;left:0;height:25px;width:25px;background-color:#eee;}"
 ".chk-box .box:after{left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width: 0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}.box:after{content:'';position:absolute;display:none;}"
 ".chk-box input:checked~.box:after{display:block;}"
-".chk-box input:checked~.box{background-color:#9303A7;}"
+".chk-box input:checked~.box{background-color:#C038D3;}"
 ".chk-box input{position:absolute;opacity:0;cursor:pointer;}"
 "h3{color:#C038D3;}"
-"button,input[type='button'],input[type='submit']{cursor:pointer;border:0;background-color:#1fa3ec;color:#fff;line-height:2.4rem;font-size:1.2rem;width:100%}"
+"button,input[type='button'],input[type='submit']{cursor:pointer;border:0;background-color:#1fa3ec;color:#fff;line-height:2.6rem;font-size:1.2rem;width:250px;}"
 "input[type='file']{border:1px solid #1fa3ec}.logo-cont{display: flex}.logo-text{display: inline;font-weight: 700;color: #9303A7;font-size: 30px;line-height: 30px;padding-left: 15px;margin-top: 10px}"
 ".wrap {text-align:left;display:inline-block;min-width:260px;max-width:500px}"
 // links
@@ -124,9 +126,10 @@ const char HTTP_STYLE[]            PROGMEM = "<style>"
 "dt{font-weight:bold}dd{margin:0;padding:0 0 0.5em 0;min-height:12px}"
 "td{vertical-align: top;}"
 ".h{display:none}"
-"button{transition: 0s opacity;transition-delay: 3s;transition-duration: 0s;cursor: pointer}"
-"button.D{background-color:#dc3630}"
+"button{transition: 0s opacity;transition-delay: 3s;transition-duration: 0s;cursor: pointer;border-radius:24px;box-shadow:5px 5px 10px 0 rgba(192,56,211,.3);}"
+"button.D{background-color:#C038D3}"
 "button:active{opacity:50% !important;cursor:wait;transition-delay: 0s}"
+"button:hover{background-color:#9303A7}"
 // invert
 "body.invert,body.invert a,body.invert h1 {background-color:#060606;color:#fff;}"
 "body.invert .msg{color:#fff;background-color:#282828;border-top:1px solid #555;border-right:1px solid #555;border-bottom:1px solid #555;}"
