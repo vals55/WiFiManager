@@ -35,6 +35,8 @@ WiFiManagerParameter::WiFiManagerParameter(const char *custom) {
   _value          = nullptr;
   _labelPlacement = WFM_LABEL_DEFAULT;
   _customHTML     = custom;
+//vals
+  _isSelectType   = false;
 }
 
 WiFiManagerParameter::WiFiManagerParameter(const char *id, const char *label) {
@@ -60,9 +62,34 @@ void WiFiManagerParameter::init(const char *id, const char *label, const char *d
   _customHTML     = custom;
   _length         = 0;
   _value          = nullptr;
+// vals
+  _isSelectType   = false;
   setValue(defaultValue,length);
 }
+// vals {
+WiFiManagerParameter::WiFiManagerParameter(const char *id, const char *custom, bool selectType, const char *defaultValue, int length) {
+  _id             = id;
+  _label          = NULL;
+  _labelPlacement = WFM_LABEL_BEFORE;
+  _customHTML     = custom;
+  _length         = 20;
+  _value          = NULL;
+  _isSelectType   = selectType;
+  setValue(defaultValue, length);
+}
 
+WiFiManagerParameter::WiFiManagerParameter(const char *id, const char *label, const char* defaultValue) {
+  _id             = id;
+  _label          = label;
+  _labelPlacement = WFM_LABEL_BEFORE;
+  _customHTML     = NULL;
+  _length         = 5;
+  _value          = NULL;
+  _isSelectType   = true;
+  setValue(defaultValue, 5);
+}
+
+// vals }
 WiFiManagerParameter::~WiFiManagerParameter() {
   if (_value != NULL) {
     delete[] _value;
@@ -124,12 +151,17 @@ int WiFiManagerParameter::getLabelPlacement() const {
 const char* WiFiManagerParameter::getCustomHTML() const {
   return _customHTML;
 }
-void WiFiManagerParameter::setCustomHtml(const char* custom) {
-    if(!_id){
-      return;
-  }
-  _customHTML = custom;
+// vals {
+// void WiFiManagerParameter::setCustomHtml(const char* custom) {
+//     if(!_id){
+//       return;
+//   }
+//   _customHTML = custom;
+// }
+bool  WiFiManagerParameter::getIsSelectType() {
+  return _isSelectType;
 }
+// vals }
 /**
  * [addParameter description]
  * @access public
@@ -1757,15 +1789,36 @@ String WiFiManager::getParamOut(){
       switch (_params[i]->getLabelPlacement()) {
         case WFM_LABEL_BEFORE:
           pitem = FPSTR(HTTP_FORM_LABEL);
-          pitem += FPSTR(HTTP_FORM_PARAM);
+// vals {
+          if(_params[i]->getIsSelectType()) {
+            pitem += FPSTR(HTTP_FORM_SELECT_CUST);
+          } else {
+            pitem += FPSTR(HTTP_FORM_PARAM);
+          }
+//          pitem += FPSTR(HTTP_FORM_PARAM);
+// vals }
           break;
         case WFM_LABEL_AFTER:
-          pitem = FPSTR(HTTP_FORM_PARAM);
+// vals {
+          if(_params[i]->getIsSelectType()) {
+            pitem += FPSTR(HTTP_FORM_SELECT_CUST);
+          } else {
+            pitem += FPSTR(HTTP_FORM_PARAM);
+          }
+//          pitem += FPSTR(HTTP_FORM_PARAM);
+// vals }
           pitem += FPSTR(HTTP_FORM_LABEL);
           break;
         default:
           // WFM_NO_LABEL
-          pitem = FPSTR(HTTP_FORM_PARAM);
+// vals {
+          if(_params[i]->getIsSelectType()) {
+            pitem += FPSTR(HTTP_FORM_SELECT_CUST);
+          } else {
+            pitem += FPSTR(HTTP_FORM_PARAM);
+          }
+//          pitem = FPSTR(HTTP_FORM_PARAM);
+// vals }
           break;
       }
 
