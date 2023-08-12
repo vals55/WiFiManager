@@ -207,11 +207,8 @@ class WiFiManagerParameter {
     WiFiManagerParameter(const char *id, const char *label, const char *defaultValue, int length);
     WiFiManagerParameter(const char *id, const char *label, const char *defaultValue, int length, const char *custom);
     WiFiManagerParameter(const char *id, const char *label, const char *defaultValue, int length, const char *custom, int labelPlacement);
-    // vals {
+    // vals
     WiFiManagerParameter(const char *id, const char *custom, bool isSelect, const char* defaultValue, int length);
-    // WiFiManagerParameter(const char *id, const char *label, const char* defaultValue);
-
-    // vals }
     ~WiFiManagerParameter();
     // WiFiManagerParameter& operator=(const WiFiManagerParameter& rhs);
 
