@@ -209,7 +209,7 @@ class WiFiManagerParameter {
     WiFiManagerParameter(const char *id, const char *label, const char *defaultValue, int length, const char *custom, int labelPlacement);
     // vals {
     WiFiManagerParameter(const char *id, const char *custom, bool isSelect, const char* defaultValue, int length);
-    WiFiManagerParameter(const char *id, const char *label, const char* defaultValue);
+    // WiFiManagerParameter(const char *id, const char *label, const char* defaultValue);
 
     // vals }
     ~WiFiManagerParameter();
