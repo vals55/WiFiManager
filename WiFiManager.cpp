@@ -35,6 +35,8 @@ WiFiManagerParameter::WiFiManagerParameter(const char *custom) {
   _value          = nullptr;
   _labelPlacement = WFM_LABEL_DEFAULT;
   _customHTML     = custom;
+//vals
+  _isSelectType   = false;
 }
 
 WiFiManagerParameter::WiFiManagerParameter(const char *id, const char *label) {
@@ -60,9 +62,22 @@ void WiFiManagerParameter::init(const char *id, const char *label, const char *d
   _customHTML     = custom;
   _length         = 0;
   _value          = nullptr;
+// vals
+  _isSelectType   = false;
   setValue(defaultValue,length);
 }
-
+// vals {
+WiFiManagerParameter::WiFiManagerParameter(const char *id, const char *custom, bool selectType, const char *defaultValue, int length) {
+  _id             = id;
+  _label          = NULL;
+  _labelPlacement = WFM_LABEL_BEFORE;
+  _customHTML     = custom;
+  _length         = 20;
+  _value          = NULL;
+  _isSelectType   = selectType;
+  setValue(defaultValue, length);
+}
+// vals }
 WiFiManagerParameter::~WiFiManagerParameter() {
   if (_value != NULL) {
     delete[] _value;
@@ -124,12 +139,17 @@ int WiFiManagerParameter::getLabelPlacement() const {
 const char* WiFiManagerParameter::getCustomHTML() const {
   return _customHTML;
 }
+// vals {
 void WiFiManagerParameter::setCustomHtml(const char* custom) {
     if(!_id){
       return;
   }
   _customHTML = custom;
 }
+bool  WiFiManagerParameter::getIsSelectType() {
+  return _isSelectType;
+}
+// vals }
 /**
  * [addParameter description]
  * @access public
@@ -1397,7 +1417,8 @@ void WiFiManager::handleWifi(boolean scan) {
     page += getParamOut();
   }
   page += FPSTR(HTTP_FORM_END);
-  page += FPSTR(HTTP_SCAN_LINK);
+  //vals
+  //page += FPSTR(HTTP_SCAN_LINK);
   if(_showBack) page += FPSTR(HTTP_BACKBTN);
   reportStatus(page);
   page += FPSTR(HTTP_END);
@@ -1562,6 +1583,7 @@ String WiFiManager::WiFiManager::getScanItemOut(){
     if(!_numNetworks) WiFi_scanNetworks(); // scan in case this gets called before any scans
 
     int n = _numNetworks;
+    page += FPSTR(HTTP_TITLE_LIST); // title of list
     if (n == 0) {
       #ifdef WM_DEBUG_LEVEL
       DEBUG_WM(F("No networks found"));
@@ -1755,15 +1777,36 @@ String WiFiManager::getParamOut(){
       switch (_params[i]->getLabelPlacement()) {
         case WFM_LABEL_BEFORE:
           pitem = FPSTR(HTTP_FORM_LABEL);
-          pitem += FPSTR(HTTP_FORM_PARAM);
+// vals {
+          if(_params[i]->getIsSelectType()) {
+            pitem += FPSTR(HTTP_FORM_SELECT_CUST);
+          } else {
+            pitem += FPSTR(HTTP_FORM_PARAM);
+          }
+//          pitem += FPSTR(HTTP_FORM_PARAM);
+// vals }
           break;
         case WFM_LABEL_AFTER:
-          pitem = FPSTR(HTTP_FORM_PARAM);
+// vals {
+          if(_params[i]->getIsSelectType()) {
+            pitem += FPSTR(HTTP_FORM_SELECT_CUST);
+          } else {
+            pitem += FPSTR(HTTP_FORM_PARAM);
+          }
+//          pitem += FPSTR(HTTP_FORM_PARAM);
+// vals }
           pitem += FPSTR(HTTP_FORM_LABEL);
           break;
         default:
           // WFM_NO_LABEL
-          pitem = FPSTR(HTTP_FORM_PARAM);
+// vals {
+          if(_params[i]->getIsSelectType()) {
+            pitem += FPSTR(HTTP_FORM_SELECT_CUST);
+          } else {
+            pitem += FPSTR(HTTP_FORM_PARAM);
+          }
+//          pitem = FPSTR(HTTP_FORM_PARAM);
+// vals }
           break;
       }
 
@@ -2459,6 +2502,8 @@ void WiFiManager::reportStatus(String &page){
   // updateConxResult(WiFi.status()); // @todo: this defeats the purpose of last result, update elsewhere or add logic here
   DEBUG_WM(DEBUG_DEV,F("[WIFI] reportStatus prev:"),getWLStatusString(_lastconxresult));
   DEBUG_WM(DEBUG_DEV,F("[WIFI] reportStatus current:"),getWLStatusString(WiFi.status()));
+  // vals
+  return;
   String str;
   if (WiFi_SSID() != ""){
     if (WiFi.status()==WL_CONNECTED){
