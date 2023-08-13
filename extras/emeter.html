@@ -10,7 +10,7 @@
 function _elem(b) {
   return document.getElementById(b)
 }
-function send(url, milli, i) {
+function send(url, milli, _process) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url);
   xhr.timeout = milli;
@@ -32,7 +32,7 @@ window.onload = function() {
       })
     }
     send('/states', 500, _process);
-}
+  }
   _refresh();
   var d = setInterval(_refresh, 2000);
 }
