@@ -5,7 +5,7 @@
 <meta charset='UTF-8'>
 <meta  name='viewport' content='width=device-width,initial-scale=1,user-scalable=no'/>
 <title>eMeter</title>
-<script type='text/javascript' src='http://smoothiecharts.org/smoothie.js'></script>
+<script type='text/javascript' src='http://github.com/joewalnes/smoothie/raw/master/smoothie.js'></script>
 <script> 
 function _elem(b) {
   return document.getElementById(b)
@@ -51,7 +51,7 @@ h1 {background-color:#060606;color:#fff;}
 .cnt{margin-right:10px;}
 </style>
 </head>
-<body class='{c}'>
+<body class='b'>
 <div class='wrap'> 
   <div class='logo-cont'> 
     <div class='logo-img'><svg alt='логотип' fill='none' height='34' viewBox='0 0 34 34' width='34' xmlns='http://www.w3.org/2000/svg'><circle stroke='dodgerblue' stroke-width='4' r='15.0' cx='17.0' cy='17.0'></circle><rect fill='lightcoral' x='14' y='14' height='6' width='15' ry='3' transform='rotate(-40 17 17)'></svg></div>
@@ -79,16 +79,16 @@ h1 {background-color:#060606;color:#fff;}
       <p>Фаза 1</p>
     </div>
     <div class='value'> 
-      <p class='m' id='voltage'>220</p>
+      <p class='v' id='voltage'>220</p>
     </div>
     <div class='value'> 
-      <p class='m' id='current'>2.56</p>
+      <p class='c' id='current'>2.56</p>
     </div>
     <div class='value'> 
-      <p class='m' id='power'>450</p>
+      <p class='p' id='power'>450</p>
     </div>
     <div class='value'> 
-      <p class='m' id='frequency'>49.6</p>
+      <p class='f' id='frequency'>49.6</p>
     </div>
   </div>
   <div class='tbl'> 
@@ -96,16 +96,16 @@ h1 {background-color:#060606;color:#fff;}
       <p>Максимум</p>
     </div>
     <div class='value'> 
-      <p class='m' id='maxvoltage'>220</p>
+      <p class='v' id='maxvoltage'>220</p>
     </div>
     <div class='value'> 
-      <p class='m' id='maxcurrent'>2.56</p>
+      <p class='c' id='maxcurrent'>2.56</p>
     </div>
     <div class='value'> 
-      <p class='m' id='maxpower'>450</p>
+      <p class='p' id='maxpower'>450</p>
     </div>
     <div class='value'> 
-      <p class='m' id='maxfreq'>51</p>
+      <p class='f' id='maxfreq'>51</p>
     </div>
  </div>
   <div class='tbl'> 
@@ -113,22 +113,22 @@ h1 {background-color:#060606;color:#fff;}
       <p>Минимум</p>
     </div>
     <div class='value'> 
-      <p class='m' id='minvoltage'>220</p>
+      <p class='v' id='minvoltage'>220</p>
     </div>
     <div class='value'> 
-      <p class='m' id='mincurrent'>2.56</p>
+      <p class='c' id='mincurrent'>2.56</p>
     </div>
     <div class='value'> 
-      <p class='m' id='minpower'>450</p>
+      <p class='p' id='minpower'>450</p>
     </div>
     <div class='value'> 
-      <p class='m' id='minfreq'>45</p>
+      <p class='f' id='minfreq'>45</p>
     </div>
   </div>
   <div class='tbl'> <span class='cnt'>
     <p >Показания счетчика электроэнергии</p>
     </span><span class='cnt'>
-    <p class='m' id='energy'>456.34</p>
+    <p class='e' id='energy'>456.34</p>
     </span><span class='cnt'>
     <p>кВт-ч</p>
     </span> </div>
