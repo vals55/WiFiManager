@@ -139,7 +139,7 @@ const char HTTP_STYLE[]            PROGMEM = "<style>"
 "body.invert .msg{color:#fff;background-color:#282828;border-top:1px solid #555;border-right:1px solid #555;border-bottom:1px solid #555;}"
 "body.invert .q[role=img]{-webkit-filter:invert(1);filter:invert(1);}"
 ":disabled {opacity: 0.5;}"
-"@keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}</style>";
+"@keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}</style>";
 
 #ifndef WM_NOHELP
 const char HTTP_HELP[]             PROGMEM =
