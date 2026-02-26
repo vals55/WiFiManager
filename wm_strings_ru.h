@@ -64,7 +64,7 @@ const char HTTP_ITEM_QP[]          PROGMEM = "<div class='q {h}'>{r}%</div>"; //
 const char HTTP_ITEM[]             PROGMEM = "<div><a href='#pp' onclick='c(this)' data-ssid='{V}'  data-bssid='{B}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
 
 const char HTTP_FORM_START[]       PROGMEM = "<form method='POST' action='{v}'>";
-const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>SSID WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='bs'>BSSID WiFi сети:</label><input id='bs' name='bs' maxlength='17' autocorrect='off' autocapitalize='none' placeholder=''><input type='checkbox' id='usebssid'><label for='usebssid'> использовать BSSID при подключении</label><br/><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input type='checkbox' onclick='f()'> Показать пароль";
+const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>SSID WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='bs'>BSSID WiFi сети:</label><input id='bs' name='bs' maxlength='17' autocorrect='off' autocapitalize='none' placeholder=''><input type='checkbox' id='usebssid'><label for='usebssid'>использовать BSSID при подключении</label><br/><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input type='checkbox' onclick='f()'>показать пароль";
 const char HTTP_FORM_WIFI_END[]    PROGMEM = "";
 
 const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<br/><br/>";
@@ -93,7 +93,7 @@ const char HTTP_BR[]               PROGMEM = "<br/>";
 
 const char HTTP_STYLE[]            PROGMEM = "<style>"
 ".c,body{text-align:center;font-family:verdana}div,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
-"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width: 20px;accent-color: #C038D3;transform: scale(1.5);}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;outline:0;width:100%}label{font-size:1em}"
+"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width: 20px;accent-color#C038D3;transform: scale(1.5);margin-right:10px;}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;outline:0;width:100%}label{font-size:1em}"
 ".chk-box{display:block;position:relative;padding-left:35px;padding-top:25px;margin-bottom:12px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}"
 ".box{position:absolute;top:25px;left:0;height:25px;width:25px;background-color:#eee;}"
 ".chk-box .box:after{left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width: 0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}.box:after{content:'';position:absolute;display:none;}"
