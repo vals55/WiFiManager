@@ -93,7 +93,7 @@ const char HTTP_BR[]               PROGMEM = "<br/>";
 
 const char HTTP_STYLE[]            PROGMEM = "<style>"
 ".c,body{text-align:center;font-family:verdana}div,select{padding:5px 5px 5px 0;font-size:1em;margin:5px 0;box-sizing:border-box}"
-"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width: 20px;accent-color: #C038D3;transform: scale(1.5);margin-right:10px;}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;outline:0;width:100%}"
+"button,select,.msg{border-radius:.3rem;width: 100%}input[type=radio],input[type=checkbox]{width: 20px;accent-color: #C038D3;transform: scale(1.5);margin-right:6px;}input{border:0;border-bottom:1px solid #888;padding:5px 0;font-size:1.2em;margin:5px 0;outline:0;width:100%}"
 "label{font-size:.9em}"
 ".chk-box{display:block;position:relative;padding-left:35px;padding-top:25px;margin-bottom:12px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}"
 ".box{position:absolute;top:25px;left:0;height:25px;width:25px;background-color:#eee;}"
