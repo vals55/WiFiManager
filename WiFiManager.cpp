@@ -12,6 +12,10 @@
 
 #include "WiFiManager.h"
 
+
+#define ESP8266
+
+
 #if defined(ESP8266) || defined(ESP32)
 
 #ifdef ESP32
@@ -1669,6 +1673,7 @@ String WiFiManager::WiFiManager::getScanItemOut(){
           }
           item.replace(FPSTR(T_V), htmlEntities(WiFi.SSID(indices[i]))); // ssid no encoding
           item.replace(FPSTR(T_v), htmlEntities(WiFi.SSID(indices[i]),true)); // ssid no encoding
+          item.replace(FPSTR(T_B), htmlEntities(WiFi.BSSIDStr(indices[i]),true)); // bssid no encoding
           if(tok_e) item.replace(FPSTR(T_e), encryptionTypeStr(enc_type));
           if(tok_r) item.replace(FPSTR(T_r), (String)rssiperc); // rssi percentage 0-100
           if(tok_R) item.replace(FPSTR(T_R), (String)WiFi.RSSI(indices[i])); // rssi db
