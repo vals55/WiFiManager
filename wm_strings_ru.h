@@ -46,11 +46,11 @@ const char * const HTTP_PORTAL_MENU[] PROGMEM = {
 "<form action='/wifi'    method='get'><button>Начать настройку</button></form><br/>\n", // MENU_WIFI
 "<form action='/0wifi'   method='get'><button>Configure WiFi (No scan)</button></form><br/>\n", // MENU_WIFINOSCAN
 "<form action='/info'    method='get'><button>Информация</button></form><br/>\n", // MENU_INFO
-"<form action='/param'   method='get'><button>Setup</button></form><br/>\n",//MENU_PARAM
-"<form action='/close'   method='get'><button>Close</button></form><br/>\n", // MENU_CLOSE
-"<form action='/restart' method='get'><button>Restart</button></form><br/>\n",// MENU_RESTART
+"<form action='/param'   method='get'><button>Настроить</button></form><br/>\n",//MENU_PARAM
+"<form action='/close'   method='get'><button>Закрыть</button></form><br/>\n", // MENU_CLOSE
+"<form action='/restart' method='get'><button>Перезапустить</button></form><br/>\n",// MENU_RESTART
 "<form action='/exit'    method='get'><button>Выход</button></form><br/>\n",  // MENU_EXIT
-"<form action='/erase'   method='get'><button class='D'>Erase</button></form><br/>\n", // MENU_ERASE
+"<form action='/erase'   method='get'><button class='D'>Очистить</button></form><br/>\n", // MENU_ERASE
 "<form action='/update'  method='get'><button>Обновить прошивку</button></form><br/>\n",// MENU_UPDATE
 //  "<hr><br/>" // MENU_SEP
  "<br/><br/>" // MENU_SEP
@@ -75,13 +75,13 @@ const char HTTP_FORM_PARAM_HEAD[]  PROGMEM = "<br/><br/>";
 const char HTTP_FORM_PARAM[]       PROGMEM = "<br/><input id='{i}' name='{n}' maxlength='{l}' value='{v}' {c}>\n"; // do not remove newline!
 const char HTTP_FORM_SELECT_CUST[] PROGMEM = "<select class='drop' id='{i}' name='{n}'>{c}</select>";
 
-const char HTTP_SCAN_LINK[]        PROGMEM = "<br/><form action='/wifi?refresh=1' method='POST'><button name='refresh' value='1'>Refresh</button></form>";
+const char HTTP_SCAN_LINK[]        PROGMEM = "<br/><form action='/wifi?refresh=1' method='POST'><button name='refresh' value='1'>Перечитать</button></form>";
 const char HTTP_SAVED[]            PROGMEM = "<div class='msg'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>";
 const char HTTP_PARAMSAVED[]       PROGMEM = "<div class='msg S'>Данные сохранены.<br/>Попытаемся подключиться к сети.<br />Если попытка будет неудачной,<br />то подключитесь к точке доступа снова.</div>";
 const char HTTP_END[]              PROGMEM = "</div></body></html>";
-const char HTTP_ERASEBTN[]         PROGMEM = "<br/><form action='/erase' method='get'><button class='D'>Erase WiFi config</button></form>";
-const char HTTP_UPDATEBTN[]        PROGMEM = "<br/><form action='/update' method='get'><button>Update</button></form>";
-const char HTTP_BACKBTN[]          PROGMEM = "<br/><br/><form action='/' method='get'><button>Back</button></form>";
+const char HTTP_ERASEBTN[]         PROGMEM = "<br/><form action='/erase' method='get'><button class='D'>Очистить конфигурацию WiFi</button></form>";
+const char HTTP_UPDATEBTN[]        PROGMEM = "<br/><form action='/update' method='get'><button>Обновить</button></form>";
+const char HTTP_BACKBTN[]          PROGMEM = "<br/><br/><form action='/' method='get'><button>Назад</button></form>";
 
 const char HTTP_STATUS_ON[]        PROGMEM = "<div class='msg S'><strong>Connected</strong> to {v}<br/><em><small>with IP {i}</small></em></div>";
 const char HTTP_STATUS_OFF[]       PROGMEM = "<div class='msg {c}'><strong>Not connected</strong> to {v}{r}</div>"; // {c=class} {v=ssid} {r=status_off}
