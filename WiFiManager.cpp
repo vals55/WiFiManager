@@ -13,7 +13,7 @@
 #include "WiFiManager.h"
 
 
-#define ESP8266
+//#define ESP8266
 
 
 #if defined(ESP8266) || defined(ESP32)
