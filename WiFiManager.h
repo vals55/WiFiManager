@@ -461,8 +461,8 @@ class WiFiManager
     String        getWiFiBSSID(bool persistent = true);
     uint8_t       getWiFiBSSID_set(bool persistent = true);
     
-    String        arg_bssid(bool persistent = true) const;
-    String        arg_bssid_set(bool persistent = true) const;
+    String        arg_bssid(bool persistent = true);
+    String        arg_bssid_set(bool persistent = true);
 
 
     // debug output the softap config
