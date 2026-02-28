@@ -458,6 +458,8 @@ class WiFiManager
     // helper to get saved ssid, if persistent get stored, else get current if connected
     String        getWiFiSSID(bool persistent = true);
 
+    String        getWiFiBSSID(bool persistent = true);
+
     // debug output the softap config
     void          debugSoftAPConfig();
 
@@ -691,6 +693,7 @@ class WiFiManager
     bool          WiFi_hasAutoConnect();
     void          WiFi_autoReconnect();
     String        WiFi_SSID(bool persistent = true) const;
+    String        WiFi_BSSID(bool persistent = true) const;
     String        WiFi_psk(bool persistent = true) const;
     bool          WiFi_scanNetworks();
     bool          WiFi_scanNetworks(bool force,bool async);

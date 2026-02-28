@@ -13,7 +13,7 @@
 #include "WiFiManager.h"
 
 
-//#define ESP8266
+#define ESP32
 
 
 #if defined(ESP8266) || defined(ESP32)
@@ -3330,6 +3330,10 @@ String WiFiManager::getWiFiSSID(bool persistent){
   return WiFi_SSID(persistent);
 }
 
+String WiFiManager::getWiFiBSSID(bool persistent){
+  return WiFi_BSSID(persistent);
+}
+
 /**
  * getWiFiPass
  * @since $dev
@@ -3762,6 +3766,40 @@ uint8_t WiFiManager::WiFi_softap_num_stations(){
 
 bool WiFiManager::WiFi_hasAutoConnect(){
   return WiFi_SSID(true) != "";
+}
+
+#define MAC_STR "%02X:%02X:%02X:%02X:%02X:%02X"
+
+String WiFiManager::WiFi_BSSID(bool persistent) const{
+
+    #ifdef ESP8266
+      struct station_config conf;
+      if(persistent) wifi_station_get_config_default(&conf);
+      else wifi_station_get_config(&conf);
+
+      char baseMacChr[18] = {0};
+      sprintf(baseMacChr, MAC_STR, bssid[0], bssid[1], bssid[2], bssid[3], bssid[4], bssid[5]);
+      return String(baseMacChr);
+    
+    #elif defined(ESP32)
+      if(persistent){
+        wifi_config_t conf;
+        esp_wifi_get_config(WIFI_IF_STA, &conf);
+        char baseMacChr[18] = {0};
+        sprintf(baseMacChr, MAC_STR, conf.bssid[0], conf.bssid[1], conf.bssid[2], conf.bssid[3], conf.bssid[4], conf.bssid[5]);
+        return String(baseMacChr);
+      }
+      else {
+        if(WiFiGenericClass::getMode() == WIFI_MODE_NULL){
+            return String();
+        }
+        wifi_ap_record_t info;
+        if(!esp_wifi_sta_get_ap_info(&info)) {
+            return String(reinterpret_cast<char*>(info.ssid));
+        }
+        return String();
+      }
+    #endif
 }
 
 String WiFiManager::WiFi_SSID(bool persistent) const{
