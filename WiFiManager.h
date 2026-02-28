@@ -537,6 +537,8 @@ class WiFiManager
     String        _apPassword             = "";
     String        _ssid                   = ""; // var temp ssid
     String        _pass                   = ""; // var temp psk
+    String        _bssid                  = ""; // var temp bssid
+    bool          _bssid_set              = false; // var temp bssid_set
     String        _defaultssid            = ""; // preload ssid
     String        _defaultpass            = ""; // preload pass
 
@@ -694,6 +696,8 @@ class WiFiManager
     void          WiFi_autoReconnect();
     String        WiFi_SSID(bool persistent = true) const;
     String        WiFi_BSSID(bool persistent = true) const;
+    String        arg_bssid(bool persistent = true) const;
+    bool          arg_bssid_set(bool persistent = true) const;
     String        WiFi_psk(bool persistent = true) const;
     bool          WiFi_scanNetworks();
     bool          WiFi_scanNetworks(bool force,bool async);
