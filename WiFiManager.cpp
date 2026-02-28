@@ -13,9 +13,6 @@
 #include "WiFiManager.h"
 
 
-#define ESP32
-
-
 #if defined(ESP8266) || defined(ESP32)
 
 #ifdef ESP32
