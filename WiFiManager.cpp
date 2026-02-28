@@ -1865,7 +1865,6 @@ void WiFiManager::handleWifiSave() {
   _pass = server->arg(F("p")).c_str();
   _bssid = server->arg(F("bs")).c_str();
   _bssid_set = server->arg(F("usebssid")).c_str();
-  rlog_i("WiFi manager", "bssid_set=%s raw=%s", _bssid_set, server->arg(F("usebssid")));
 
   #ifdef WM_DEBUG_LEVEL
   String requestinfo = "SERVER_REQUEST\n----------------\n";
@@ -3838,11 +3837,11 @@ String WiFiManager::WiFi_BSSID(bool persistent) const{
     #endif
 }
 
-String WiFiManager::arg_bssid(bool persistent) const{
+String WiFiManager::arg_bssid(bool persistent) {
   return _bssid;
 }  
 
-String WiFiManager::arg_bssid_set(bool persistent) const{
+String WiFiManager::arg_bssid_set(bool persistent) {
   return _bssid_set;
 }  
 
