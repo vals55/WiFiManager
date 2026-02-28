@@ -696,8 +696,10 @@ class WiFiManager
     void          WiFi_autoReconnect();
     String        WiFi_SSID(bool persistent = true) const;
     String        WiFi_BSSID(bool persistent = true) const;
+    
     String        arg_bssid(bool persistent = true) const;
     bool          arg_bssid_set(bool persistent = true) const;
+
     String        WiFi_psk(bool persistent = true) const;
     bool          WiFi_scanNetworks();
     bool          WiFi_scanNetworks(bool force,bool async);
