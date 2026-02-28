@@ -1399,7 +1399,7 @@ void WiFiManager::handleWifi(boolean scan) {
   pitem = FPSTR(HTTP_FORM_WIFI);
   pitem.replace(FPSTR(T_v), WiFi_SSID());
   pitem.replace(FPSTR(T_B), WiFi_BSSID());
-  pitem.replace(FPSTR(T_ch), WiFi_BSSID_set(false));
+  pitem.replace(FPSTR(T_ch), WiFi_BSSID_set() ? "checked" : "");
 
   if(_showPassword){
     pitem.replace(FPSTR(T_p), WiFi_psk());
@@ -3335,6 +3335,10 @@ String WiFiManager::getWiFiBSSID(bool persistent){
   return WiFi_BSSID(persistent);
 }
 
+uint8_t WiFiManager::getWiFiBSSID_set(bool persistent){
+  return WiFi_BSSID_set(persistent);
+}
+
 /**
  * getWiFiPass
  * @since $dev
@@ -3769,17 +3773,14 @@ bool WiFiManager::WiFi_hasAutoConnect(){
   return WiFi_SSID(true) != "";
 }
 
-String WiFiManager::WiFi_BSSID_set(bool persistent) const{
+uint8_t WiFiManager::WiFi_BSSID_set(bool persistent) {
 
     #ifdef ESP8266
       struct station_config conf;
       if(persistent) wifi_station_get_config_default(&conf);
       else wifi_station_get_config(&conf);
 
-      if(conf.bssid_set) {
-        return String("checked");
-      }  
-      return String();
+      return conf.bssid_set;
     
     #elif defined(ESP32)
       if(persistent){
