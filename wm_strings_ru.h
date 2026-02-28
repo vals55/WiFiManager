@@ -64,7 +64,7 @@ const char HTTP_ITEM_QP[]          PROGMEM = "<div class='q {h}'>{r}%</div>"; //
 const char HTTP_ITEM[]             PROGMEM = "<div><a href='#pp' onclick='c(this)' data-ssid='{V}'  data-bssid='{B}'>{v}</a>{qi}{qp}</div>"; // {q} = HTTP_ITEM_QI, {r} = HTTP_ITEM_QP
 
 const char HTTP_FORM_START[]       PROGMEM = "<form method='POST' action='{v}'>";
-const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>SSID WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='bs'>BSSID WiFi сети:</label><input id='bs' name='bs' maxlength='17' autocorrect='off' autocapitalize='none' placeholder='{B}'><input type='checkbox' id='ub' {ch}><label for='ub'>использовать BSSID при подключении</label><br/><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input type='checkbox' id='pwd' onclick='f()'><label for='pwd'>показать пароль</label>";
+const char HTTP_FORM_WIFI[]        PROGMEM = "<label for='s'>SSID WiFi сети:</label><input id='s' name='s' maxlength='32' autocorrect='off' autocapitalize='none' placeholder='{v}'><br/><label for='bs'>BSSID WiFi сети:</label><input id='bs' name='bs' maxlength='17' autocorrect='off' autocapitalize='none' placeholder='{B}'><input type='checkbox' id='ub' value='1' {ch}><label for='ub'>использовать BSSID при подключении</label><br/><br/><label for='p'>Пароль:</label><input id='p' name='p' maxlength='64' type='password' placeholder='{p}'><input type='checkbox' id='pwd' onclick='f()'><label for='pwd'>показать пароль</label>";
 const char HTTP_FORM_WIFI_END[]    PROGMEM = "";
 
 const char HTTP_FORM_STATIC_HEAD[] PROGMEM = "<br/><br/>";
