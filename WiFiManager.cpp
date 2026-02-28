@@ -1864,7 +1864,7 @@ void WiFiManager::handleWifiSave() {
   _ssid = server->arg(F("s")).c_str();
   _pass = server->arg(F("p")).c_str();
   _bssid = server->arg(F("bs")).c_str();
-  _bssid_set = server->arg(F("usebssid")).c_str();
+  _bssid_set = server->arg(F("ub")).c_str();
 
   #ifdef WM_DEBUG_LEVEL
   String requestinfo = "SERVER_REQUEST\n----------------\n";
