@@ -1399,7 +1399,7 @@ void WiFiManager::handleWifi(boolean scan) {
   pitem = FPSTR(HTTP_FORM_WIFI);
   pitem.replace(FPSTR(T_v), WiFi_SSID());
   pitem.replace(FPSTR(T_B), WiFi_BSSID());
-  pitem.replace(FPSTR(T_ch), WiFi_BSSID_set());
+  pitem.replace(FPSTR(T_ch), WiFi_BSSID_set(false));
 
   if(_showPassword){
     pitem.replace(FPSTR(T_p), WiFi_psk());
