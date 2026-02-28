@@ -3775,7 +3775,7 @@ String WiFiManager::WiFi_BSSID(bool persistent) const{
       else wifi_station_get_config(&conf);
 
       char baseMacChr[18] = {0};
-      sprintf(baseMacChr, MAC_STR, bssid[0], bssid[1], bssid[2], bssid[3], bssid[4], bssid[5]);
+      sprintf(baseMacChr, MAC_STR, conf.bssid[0], conf.bssid[1], conf.bssid[2], conf.bssid[3], conf.bssid[4], conf.bssid[5]);
       return String(baseMacChr);
     
     #elif defined(ESP32)
