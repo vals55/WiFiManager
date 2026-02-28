@@ -461,7 +461,7 @@ class WiFiManager
     String        getWiFiBSSID(bool persistent = true);
     
     String        arg_bssid(bool persistent = true) const;
-    bool          arg_bssid_set(bool persistent = true) const;
+    String        arg_bssid_set(bool persistent = true) const;
 
 
     // debug output the softap config
@@ -542,7 +542,7 @@ class WiFiManager
     String        _ssid                   = ""; // var temp ssid
     String        _pass                   = ""; // var temp psk
     String        _bssid                  = ""; // var temp bssid
-    bool          _bssid_set              = false; // var temp bssid_set
+    String        _bssid_set              = ""; // var temp bssid_set
     String        _defaultssid            = ""; // preload ssid
     String        _defaultpass            = ""; // preload pass
 
