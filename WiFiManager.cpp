@@ -11,8 +11,6 @@
  */
 
 #include "WiFiManager.h"
-#include "rlog.h"
-
 
 #if defined(ESP8266) || defined(ESP32)
 
