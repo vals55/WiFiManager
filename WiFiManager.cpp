@@ -1398,6 +1398,7 @@ void WiFiManager::handleWifi(boolean scan) {
 
   pitem = FPSTR(HTTP_FORM_WIFI);
   pitem.replace(FPSTR(T_v), WiFi_SSID());
+  pitem.replace(FPSTR(T_B), WiFi_BSSID());
 
   if(_showPassword){
     pitem.replace(FPSTR(T_p), WiFi_psk());
