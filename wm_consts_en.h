@@ -79,7 +79,10 @@ const char T_2[]                  PROGMEM = "{2}"; // @token 2
 const char T_3[]                  PROGMEM = "{3}"; // @token 2
 const char T_v[]                  PROGMEM = "{v}"; // @token v
 const char T_V[]                  PROGMEM = "{V}"; // @token v
-const char T_B[]                  PROGMEM = "{B}"; // @token v
+
+const char T_B[]                  PROGMEM = "{B}"; // @token B
+const char T_ch[]                 PROGMEM = "{ch}"; // @token ch
+
 const char T_I[]                  PROGMEM = "{I}"; // @token I
 const char T_i[]                  PROGMEM = "{i}"; // @token i
 const char T_n[]                  PROGMEM = "{n}"; // @token n

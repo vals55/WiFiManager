@@ -1399,6 +1399,7 @@ void WiFiManager::handleWifi(boolean scan) {
   pitem = FPSTR(HTTP_FORM_WIFI);
   pitem.replace(FPSTR(T_v), WiFi_SSID());
   pitem.replace(FPSTR(T_B), WiFi_BSSID());
+  pitem.replace(FPSTR(T_ch), WiFi_BSSID_set());
 
   if(_showPassword){
     pitem.replace(FPSTR(T_p), WiFi_psk());
@@ -3766,6 +3767,40 @@ uint8_t WiFiManager::WiFi_softap_num_stations(){
 
 bool WiFiManager::WiFi_hasAutoConnect(){
   return WiFi_SSID(true) != "";
+}
+
+String WiFiManager::WiFi_BSSID_set(bool persistent) const{
+
+    #ifdef ESP8266
+      struct station_config conf;
+      if(persistent) wifi_station_get_config_default(&conf);
+      else wifi_station_get_config(&conf);
+
+      if(conf.bssid_set) {
+        return String("checked");
+      }  
+      return String();
+    
+    #elif defined(ESP32)
+      if(persistent){
+        wifi_config_t conf;
+        esp_wifi_get_config(WIFI_IF_STA, &conf);
+        if(conf.bssid_set) {
+          return String("checked");
+        }  
+        return String();
+      }
+      else {
+        if(WiFiGenericClass::getMode() == WIFI_MODE_NULL){
+            return String();
+        }
+        wifi_ap_record_t info;
+        if(!esp_wifi_sta_get_ap_info(&info)) {
+            return String(reinterpret_cast<char*>(info.ssid));
+        }
+        return String();
+      }
+    #endif
 }
 
 #define MAC_STR "%02X:%02X:%02X:%02X:%02X:%02X"
