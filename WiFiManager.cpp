@@ -3840,12 +3840,16 @@ String WiFiManager::WiFi_BSSID(bool persistent) const{
     #endif
 }
 
-String WiFiManager::arg_bssid(bool persistent) {
+String WiFiManager::arg_bssid() {
   return _bssid;
 }  
 
-String WiFiManager::arg_bssid_set(bool persistent) {
+String WiFiManager::arg_bssid_set() {
   return _bssid_set;
+}  
+
+String WiFiManager::arg_password() {
+  return _pass;
 }  
 
 String WiFiManager::WiFi_SSID(bool persistent) const{
