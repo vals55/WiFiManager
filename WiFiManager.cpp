@@ -3812,7 +3812,7 @@ String WiFiManager::WiFi_BSSID(bool persistent) const{
       if(persistent) wifi_station_get_config_default(&conf);
       else wifi_station_get_config(&conf);
 
-      if(conf.bssid[0] == conf.bssid[1]) {
+      if((conf.bssid[0] == conf.bssid[1]) || !conf.bssid_set) {
         return String();
       }
       char baseMacChr[18] = {0};
