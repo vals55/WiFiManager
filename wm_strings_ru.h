@@ -31,7 +31,7 @@ const char HTTP_HEAD_START[]       PROGMEM = "<!DOCTYPE html>"
 "<title>{v}</title>";
 
 const char HTTP_SCRIPT[]           PROGMEM = "<script>"
-"function c(l){document.getElementById('s').value=l.getAttribute('data-ssid')||l.innerText||l.textContent;document.getElementById('bs').value=l.getAttribute('data-bssid')||l.innerText||l.textContent;p=l.nextElementSibling.classList.contains('l');document.getElementById('p').disabled=!p;if(p)document.getElementById('p').focus();};"
+"function c(l){document.getElementById('s').value=l.getAttribute('data-ssid')||l.innerText||l.textContent;document.getElementById('bs').placeholder=l.getAttribute('data-bssid')||l.innerText||l.textContent;p=l.nextElementSibling.classList.contains('l');document.getElementById('p').disabled=!p;if(p)document.getElementById('p').focus();};"
 "function f() {var x = document.getElementById('p');x.type==='password'?x.type='text':x.type='password';}"
 "function g(b){return document.getElementById(b);} function extraConf() {var e=g('chbox');var d='none';if(e.checked){d='block'}g('extra_conf').style.display=d;}"
 "function b(){var p = g('bs').placeholder;if(p!==''){g('bs').value=p;}}"
